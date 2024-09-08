@@ -12,14 +12,17 @@
     "@plasmicapp/loader-nextjs": "^1.0.404",
     "next": "14.2.8",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-fast-marquee": "^1.6.5",
+    "react-google-reviews": "^1.2.0",
+    "swiper": "^11.1.12"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "20.16.5",
+    "@types/react": "18.3.5",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.8",
-    "typescript": "^5"
+    "typescript": "5.5.4"
   }
 }

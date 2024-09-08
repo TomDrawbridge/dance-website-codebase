@@ -23,3 +23,77 @@ export const PLASMIC = initPlasmicLoader({
 // https://docs.plasmic.app/learn/app-hosting/#set-a-plasmic-project-to-use-your-app-host
 
 // PLASMIC.registerComponent(...);
+
+
+
+import CustomMarquee from "./components/Marquee";
+
+PLASMIC.registerComponent(CustomMarquee, {
+  name: "Marquee",
+  props: {
+    className: "string",
+    style: "object",
+    autoFill: "boolean",
+    play: "boolean",
+    pauseOnHover: "boolean",
+    pauseOnClick: "boolean",
+    direction: {
+      type: "choice",
+      options: ["left", "right", "up", "down"]
+    },
+    speed: "number",
+    delay: "number",
+    loop: "number",
+    gradient: "boolean",
+    gradientColor: "string",
+    gradientWidth: {
+      type: "number",
+      displayName: "Gradient Width",
+      description: "Width of the gradient on either side"
+    },
+    onFinish: {
+      type: "eventHandler",
+      argTypes: []
+    },
+    onCycleComplete: {
+      type: "eventHandler",
+      argTypes: []
+    },
+    onMount: {
+      type: "eventHandler",
+      argTypes: []
+    },
+    children: {
+      type: "slot",
+      defaultValue: [
+        {
+          type: "text",
+          value: "I can be a React component, multiple React components, or just some text."
+        }
+      ]
+    }
+  },
+});
+
+
+
+import { ScrollProvider } from "./components/ScrollContext";
+
+PLASMIC.registerGlobalContext(ScrollProvider, {
+  name: "ScrollProvider",
+  providesData: true,
+  props: {},
+});
+
+
+import GoogleReviewsWidget from "./components/GoogleReviewsWidget";
+
+PLASMIC.registerComponent(GoogleReviewsWidget, {
+  name: "Google Reviews Widget",
+  props: {
+className: "string",
+widgetId: "string",
+  },
+});
+
+
